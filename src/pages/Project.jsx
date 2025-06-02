@@ -63,10 +63,10 @@ export default function Project() {
       x: Math.random() * size.width,
       y: Math.random() * size.height,
       radius: Math.random() * 3 + 1.5,
-      speedX: 0.3 + Math.random() * 0.7, // horizontal speed (rightwards)
-      speedY: 0.5 + Math.random() * 1.2, // vertical speed (downwards)
-      sway: Math.random() * 0.05 + 0.02, // side to side sway speed
-      swayPhase: Math.random() * Math.PI * 2, // initial phase for sway
+      speedX: 0.3 + Math.random() * 0.7,
+      speedY: 0.5 + Math.random() * 1.2, 
+      sway: Math.random() * 0.05 + 0.02,
+      swayPhase: Math.random() * Math.PI * 2, 
     });
 
     for (let i = 0; i < 60; i++) {
@@ -100,15 +100,12 @@ export default function Project() {
         ctx.fill();
         ctx.shadowBlur = 0;
 
-        // Move particle with sway effect for natural curve
         p.x += p.speedX + Math.sin(p.swayPhase) * p.sway * 20;
         p.y += p.speedY;
         p.swayPhase += 0.05;
 
-        // Respawn if out of bounds
         if (p.x > size.width + 20 || p.y > size.height + 20) {
           particles[idx] = createParticle();
-          // start roughly from left or top-left area but randomly scattered
           particles[idx].x = Math.random() * size.width * 0.3;
           particles[idx].y = -10 - Math.random() * 30;
         }
