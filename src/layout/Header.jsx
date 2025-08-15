@@ -6,7 +6,6 @@ import { CiLinkedin } from "react-icons/ci";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import WelcomeIntro from "../layout/WelcomeIntro";
 import ScrollToTopButton from "./ScrollToTopButton";
-import { Link } from "lucide-react";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
