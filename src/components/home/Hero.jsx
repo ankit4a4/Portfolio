@@ -16,7 +16,7 @@ const Hero = () => {
       id='home'
     >
       <div className='text-center'>
-        <h1 className='md:text-[4.5vw] text-[7vw] font-bold text-baseColor ankitName'>
+        <h1 className='md:text-[4.5vw] text-[7vw] font-bold text-baseColor  ankitName'>
           ANKIT SINGH
         </h1>
         <Fade>

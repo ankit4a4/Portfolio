@@ -10,7 +10,6 @@ const Skills = () => {
     { name: "React.js", icon: <FaReact className="text-[#61DAFB]" /> },
     { name: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38B2AC]" /> },
-    { name: "Next.js", icon: <SiNextdotjs className="text-[#000000]" /> },
   ];
 
   const floatingIcons = [
@@ -46,7 +45,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative min-h-screen bg-gray-900 flex flex-col items-center justify-center py-20 px-6 overflow-hidden"
+      className="relative min-h-screen  flex flex-col items-center justify-center py-20 px-6 overflow-hidden"
     >
       {/* Floating icons background */}
       {floatingIcons.map((item, idx) => (
@@ -77,7 +76,7 @@ const Skills = () => {
         I use these technologies to build modern, responsive, and high-performing web applications.
       </p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 w-full max-w-6xl z-10 relative">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-6xl z-10 relative">
         {mySkills.map((skill, index) => (
           <div
             key={index}

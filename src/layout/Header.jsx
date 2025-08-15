@@ -6,6 +6,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import WelcomeIntro from "../layout/WelcomeIntro";
 import ScrollToTopButton from "./ScrollToTopButton";
+import { Link } from "lucide-react";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -56,11 +57,10 @@ const Header = () => {
 
       {/* Main Header */}
       <header
-        className={`fixed top-0 left-0 w-full z-50 py-3 px-6 md:px-14 flex items-center justify-between transition-all duration-500 backdrop-blur-sm
-          ${
-            scrollPosition > 10
-              ? "bg-black bg-opacity-90 shadow-lg py-2"
-              : "bg-transparent"
+        className={`fixed top-0 left-0 w-full z-50 py-3 md:py-[1vw] px-6 md:px-[2vw]  flex items-center justify-between transition-all duration-500 backdrop-blur-sm
+          ${scrollPosition > 10
+            ? "bg-black bg-opacity-90 shadow-lg py-2"
+            : "bg-transparent"
           }
         `}
       >
@@ -68,12 +68,12 @@ const Header = () => {
         <img
           src={logo}
           alt="Logo"
-          className="h-[52px] w-[52px] rounded-full cursor-pointer transition-transform duration-300 hover:scale-110"
+          className="h-[52px] w-[52px] md:h-[4vw] md:w-[4vw] rounded-full cursor-pointer transition-transform duration-300 hover:scale-110"
           onClick={() => setShowImage(logo)}
         />
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-12 font-semibold text-white tracking-wide text-[1rem]">
+        <ul className="hidden md:flex items-center gap-12 md:gap-[2.5vw] font-semibold text-white tracking-wide">
           {link.map((item, index) => (
             <li key={index} className="relative group cursor-pointer">
               <a
@@ -83,7 +83,7 @@ const Header = () => {
                   const target = document.querySelector(item.href);
                   if (target) smoothScrollTo(target.offsetTop);
                 }}
-                className="hover:text-[#40E0D0] transition-colors duration-300"
+                className="hover:text-[#40E0D0] text-[2.5vh] md-text-[1.3vw] transition-colors duration-300"
               >
                 {item.name}
               </a>
@@ -94,24 +94,24 @@ const Header = () => {
         </ul>
 
         {/* Icons + Button */}
-        <div className="hidden md:flex gap-6 items-center">
+        <div className="hidden md:flex gap-6 md:gap-[2vw] items-center">
           <span
             onClick={sendMessage}
-            className="text-white text-[1.6rem] cursor-pointer hover:text-[#25D366] transition-colors duration-300"
+            className="text-white text-[1.6rem] md:text-[2vw] cursor-pointer hover:text-[#25D366] transition-colors duration-300"
             aria-label="WhatsApp"
           >
             <FaWhatsapp />
           </span>
           <span
             onClick={sendMessageToInstagram}
-            className="text-white text-[1.6rem] cursor-pointer hover:text-[#E1306C] transition-colors duration-300"
+            className="text-white text-[1.6rem] md:text-[2vw] cursor-pointer hover:text-[#E1306C] transition-colors duration-300"
             aria-label="Instagram"
           >
             <FaInstagram />
           </span>
           <span
             onClick={sendMessageToLinkedin}
-            className="text-white text-[1.6rem] cursor-pointer hover:text-[#0077B5] transition-colors duration-300"
+            className="text-white text-[1.6rem] md:text-[2vw] cursor-pointer hover:text-[#0077B5] transition-colors duration-300"
             aria-label="LinkedIn"
           >
             <CiLinkedin />
@@ -119,9 +119,9 @@ const Header = () => {
 
           <button
             onClick={() => setShowImage(img)}
-            className="relative inline-block px-6 py-2 border border-[#40E0D0] rounded-md font-medium text-white overflow-hidden group hover:text-black transition-colors duration-300"
+            className="relative cursor-pointer inline-block px-6 py-2 md:py-[0.5vw] md:px-[1.5vw] border border-[#40E0D0] rounded-md font-medium text-white overflow-hidden group hover:text-black transition-colors duration-300 md:text-[1.3vw] "
           >
-            <span className="absolute inset-0 bg-[#40E0D0] translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out rounded-md z-[-1]"></span>
+            <span className="absolute inset-0  bg-[#40E0D0] translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out rounded-md z-[-1]"></span>
             View CV
           </button>
         </div>
@@ -146,9 +146,8 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 w-[70%] sm:w-[50%] h-screen bg-black text-white z-40 transform ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-500 ease-in-out backdrop-blur-md shadow-lg flex flex-col gap-10 py-28 px-8`}
+        className={`fixed top-0 right-0 w-[70%] sm:w-[50%] h-screen bg-black text-white z-40 transform ${menuOpen ? "translate-x-0" : "translate-x-full"
+          } transition-transform duration-500 ease-in-out backdrop-blur-md shadow-lg flex flex-col gap-10 py-28 px-8`}
       >
         {link.map((item, index) => (
           <a
@@ -216,7 +215,7 @@ const Header = () => {
           <button
             aria-label="Close CV"
             onClick={() => setShowImage("")}
-            className="absolute top-5 right-5 text-red-500 text-4xl font-bold hover:text-red-700 transition-colors duration-300"
+            className="absolute top-5 right-5 md:top-[1vw]  md:right-[1vw] cursor-pointer text-red-500 text-4xl md:text-[3vw] font-bold hover:text-red-700 transition-colors duration-300"
           >
             &times;
           </button>
